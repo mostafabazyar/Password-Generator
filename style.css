@@ -1,5 +1,119 @@
-body{
-   font-size: 12px;
-   font-family: sans-serif;
-   background: #2c3e50;
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+}
+body {
+  font-size: 12px;
+  font-family: sans-serif;
+  background: #1c1e20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.box {
+  background-color: #23262b;
+  padding: 30px;
+  position: relative;
+  border-radius: 5px;
+  border: 1px solid #6680FF;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border:1px solid transparent; 
+  -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+  transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+}
+
+.box::before {
+   content: '';
+   position: absolute;
+   left: 0px;
+   bottom:0px;
+   z-index:1;
+   width: 0%;
+   height:1px;
+   background: #6098FF;
+   box-shadow: inset 0px 0px 0px #6098FF;
+   display: block;
+   -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+   transition: all 0.4s cubic-bezier(.5, .24, 0, 1)
+ }
+ 
+ .box:hover::before {
+   width:100%;
+ }
+ 
+ .box::after {
+   content: '';
+   position: absolute;
+   right: 0px;
+   top:0px;
+   z-index:1;
+   width: 0%;
+   height:1px;
+   background: #6098FF;
+   -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+   transition: all 0.4s cubic-bezier(.5, .24, 0, 1)
+ }
+
+ .box:hover::after {
+   width:100%;
+ }
+
+ .box:hover{
+   border-left:1px solid #6098FF;
+   border-right:1px solid #6098FF;
+ }
+
+.box h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: sans-serif;
+  overflow: hidden;
+  color: #fff;
+}
+
+input {
+  padding: 20px;
+  font-size: 16px;
+  user-select: none;
+  height: 50px;
+  width: 400px;
+  border-radius: 6px;
+  color: #fff;
+  border: 1px solid #6680FF;
+  background-color: hsl(217, 7%, 37%);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+input::placeholder {
+  font-size: 23px;
+}
+
+#button {
+  font-size: 15px;
+  margin-top: 15px;
+  border: 2px solid #934bf7;
+  width: 155px;
+  height: 50px;
+  text-align: center;
+  background-color: #934bf7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 7px;
+  color: #fff;
+  transition: all 400ms;
+}
+
+.btn {
+  margin-left: 85px;
+}
+
+#button:hover{
+   color: #efefef;
+   background-color: #a164f7;
 }
